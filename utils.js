@@ -5,7 +5,7 @@ const data = require('./data')
  *
  * @param {string} id The id to check
  */
-function checkBookingExists (id) {
+function checkBookingExists(id) {
   const booking = data.find(function (item) {
     return item.id === id
   })
@@ -18,8 +18,8 @@ function checkBookingExists (id) {
  *
  * @param {object} booking A booking object
  */
-function createBooking (booking) {
-  if (checkBookingExists(bookin.id)){
+function createBooking(booking) {
+  if (checkBookingExists(booking.id)) {
     throw new Error(`Booking with id ${booking.id} already exists`)
   }
 
@@ -34,7 +34,7 @@ function createBooking (booking) {
  *
  * @param {string} id The booking to delete
  */
-function deleteBooking (id) {
+function deleteBooking(id) {
   const indexForDeletion = data.findIndex(function (item) {
     return item.id === id
   })
@@ -54,8 +54,8 @@ function deleteBooking (id) {
  * @param {string} id - The booking id
  * @param {object} booking The booking object
  */
-function editBooking (id, booking) {
-    const indexForUpdate = data.findIndex(function (item) {
+function editBooking(id, booking) {
+  const indexForUpdate = data.findIndex(function (item) {
     return item.id === id
   })
 
@@ -71,7 +71,7 @@ function editBooking (id, booking) {
 /**
  * Returns an array with bookings
  */
-function getAllBookings () {
+function getAllBookings() {
   return data
 }
 
@@ -80,7 +80,7 @@ function getAllBookings () {
  *
  * @param {string} id Booking id
  */
-function getBooking (id) {
+function getBooking(id) {
   const booking = data.find(function (item) {
     return item.id === id
   })
